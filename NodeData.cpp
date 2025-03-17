@@ -21,7 +21,7 @@ int main() {
 	num->next = (num+1);
 	(num + 1)->next = NULL;
 
-		printf("µÎ ¹øÂ° ³ëµåÀÇ µ¥ÀÌÅÍ : %d\n", num->next->data);
+		printf("ë‘ ë²ˆì§¸ ë…¸ë“œì˜ ë°ì´í„° : %d\n", num->next->data);
 
     free(num);
 	return 0;
