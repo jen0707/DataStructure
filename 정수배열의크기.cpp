@@ -6,7 +6,7 @@ int main()
 	int N;
 	int* arr;
 
-	printf("Á¤¼ö ¹è¿­ÀÇ Å©±â¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("ì •ìˆ˜ ë°°ì—´ì˜ í¬ê¸°ë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 	scanf_s("%d", &N);
 
 	arr = (int*)malloc(N * sizeof(int));
@@ -20,7 +20,7 @@ int main()
 		arr[i] = i + 1;
 	}
 
-	printf("¹è¿­ ³»¿ë:");
+	printf("ë°°ì—´ ë‚´ìš©:");
 	for (int i = 0; i < N; i++) {
 		printf("%d ", arr[i]);
 	}
