@@ -57,19 +57,20 @@ TreeNode* search(TreeNode* node, int value) {
 }
 
 int main(void) {
-	// ¹®Á¦ 1: ºñ´Ü¸» ³ëµå ¼ö ¼¼±â
+	// ë¬¸ì œ 1: ë¹„ë‹¨ë§ ë…¸ë“œ ìˆ˜ ì„¸ê¸°
 	int count = count_non_leaf_nodes(root);
-	printf("ºñ´Ü¸» ³ëµå ¼ö = %d\n", count);
+	printf("ë¹„ë‹¨ë§ ë…¸ë“œ ìˆ˜ = %d\n", count);
 
-	// ¹®Á¦ 2: °ª °Ë»ö Å×½ºÆ®
-	printf("Æ¯Á¤ °ªÀ» Á¤ÇÏ½Ã¿À: ");
+	// ë¬¸ì œ 2: ê°’ ê²€ìƒ‰ í…ŒìŠ¤íŠ¸
+	printf("íŠ¹ì • ê°’ì„ ì •í•˜ì‹œì˜¤: ");
 	int target;
 	scanf_s("%d", &target);
 	TreeNode* result = search(root, target);
 	if (result != NULL)
-		printf("°ª %d ¹ß°ß: ³ëµå ÁÖ¼Ò = %p\n", target, (void*)result);
+		printf("ê°’ %d ë°œê²¬: ë…¸ë“œ ì£¼ì†Œ = %p\n", target, (void*)result);
 	else
-		printf("°ª %d ¹ß°ßµÇÁö ¾ÊÀ½\n", target);
+		printf("ê°’ %d ë°œê²¬ë˜ì§€ ì•ŠìŒ\n", target);
 
 	return 0;
+
 }
