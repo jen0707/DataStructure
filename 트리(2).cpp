@@ -10,7 +10,7 @@ typedef struct Student {
 	struct Student* right;
 }Student;
 
-// ÇĞ»ı Á¤º¸ Ãß°¡
+// í•™ìƒ ì •ë³´ ì¶”ê°€
 Student* insert(Student* root, int id, const char* name) {
 	if (root == NULL) {
 		Student* newNode = (Student*)malloc(sizeof(Student));
@@ -24,11 +24,11 @@ Student* insert(Student* root, int id, const char* name) {
 	else if (id > root->id)
 		root->right = insert(root->right, id, name);
 	else
-		printf("ÇĞ¹ø %d°¡ ÀÌ¹Ì Á¸ÀçÇÕ´Ï´Ù.\n", id);
+		printf("í•™ë²ˆ %dê°€ ì´ë¯¸ ì¡´ì¬í•©ë‹ˆë‹¤.\n", id);
 	return root;
 }
 
-// ÇĞ»ı Á¤º¸ Å½»ö
+// í•™ìƒ ì •ë³´ íƒìƒ‰
 Student* search(Student* root, int id) {
 	if (root == NULL) return NULL;
 	if (root->id == id) return root;
@@ -38,15 +38,15 @@ Student* search(Student* root, int id) {
 		return search(root->right, id);
 }
 
-// ÀüÃ¼ Ãâ·Â
+// ì „ì²´ ì¶œë ¥
 void inorder(Student* root) {
 	if (root == NULL) return;
 	inorder(root->left);
-	printf("ÇĞ¹ø: %d, ÀÌ¸§: %s\n", root->id, root->name);
+	printf("í•™ë²ˆ: %d, ì´ë¦„: %s\n", root->id, root->name);
 	inorder(root->right);
 }
 
-// ÇĞ»ı Á¤º¸ »èÁ¦
+// í•™ìƒ ì •ë³´ ì‚­ì œ
 Student* delete_(Student* root, int id) {
 	if (root == NULL) return NULL;
 	if (id < root->id)
@@ -82,54 +82,54 @@ int main(void) {
 	Student* root = NULL;
 	int choice, id;
 
-	// ¿¹½Ã µ¥ÀÌÅÍ
-	root = insert(root, 202104, "ÀÌ**");
-	root = insert(root, 202102, "¹Ú**");
-	root = insert(root, 202101, "±è**");
-	root = insert(root, 202107, "ÃÖ**");
-	root = insert(root, 202103, "Á¤**");
-	root = insert(root, 202106, "ÇÑ**");
-	root = insert(root, 202105, "¿À**");
+	// ì˜ˆì‹œ ë°ì´í„°
+	root = insert(root, 202104, "ì´**");
+	root = insert(root, 202102, "ë°•**");
+	root = insert(root, 202101, "ê¹€**");
+	root = insert(root, 202107, "ìµœ**");
+	root = insert(root, 202103, "ì •**");
+	root = insert(root, 202106, "í•œ**");
+	root = insert(root, 202105, "ì˜¤**");
 
 
 	while (1) {
-		printf("\n==== ÇĞ»ı Á¤º¸ ½Ã½ºÅÛ ====\n");
-		printf("(1) ÇĞ»ı Á¤º¸ Å½»ö\n");
-		printf("(2) ÇĞ»ı Á¤º¸ »èÁ¦\n");
-		printf("(3) ÀüÃ¼ Ãâ·Â\n");
-		printf("(0) Á¾·á\n");
-		printf("¼±ÅÃ : ");
+		printf("\n==== í•™ìƒ ì •ë³´ ì‹œìŠ¤í…œ ====\n");
+		printf("(1) í•™ìƒ ì •ë³´ íƒìƒ‰\n");
+		printf("(2) í•™ìƒ ì •ë³´ ì‚­ì œ\n");
+		printf("(3) ì „ì²´ ì¶œë ¥\n");
+		printf("(0) ì¢…ë£Œ\n");
+		printf("ì„ íƒ : ");
 		scanf("%d", &choice);
 
 		switch (choice) {
 		case 1: {
-			printf("ÇĞ¹ø ÀÔ·Â: ");
+			printf("í•™ë²ˆ ì…ë ¥: ");
 			scanf("%d", &id);
 			Student* found = search(root, id);
 			if (found != NULL)
-				printf("°Ë»ö °á°ú: ÇĞ¹ø:%d, ÀÌ¸§: %s\n", found->id, found->name);
+				printf("ê²€ìƒ‰ ê²°ê³¼: í•™ë²ˆ:%d, ì´ë¦„: %s\n", found->id, found->name);
 			else
-				printf("ÇØ´ç ÇĞ¹ø ¾øÀ½.\n");
+				printf("í•´ë‹¹ í•™ë²ˆ ì—†ìŒ.\n");
 			break;
 		}
 		case 2:
-			printf("»èÁ¦ÇÒ ÇĞ¹ø ÀÔ·Â: ");
+			printf("ì‚­ì œí•  í•™ë²ˆ ì…ë ¥: ");
 			scanf("%d", &id);
 			root = delete_(root, id);
-			printf("ÇĞ¹ø %d »èÁ¦ ¿Ï·á.\n", id);
+			printf("í•™ë²ˆ %d ì‚­ì œ ì™„ë£Œ.\n", id);
 			break;
 
 		case 3:
-			printf("--- ÀüÃ¼ ÇĞ»ı ¸ñ·Ï (¿À¸§Â÷¼ø) --- \n");
+			printf("--- ì „ì²´ í•™ìƒ ëª©ë¡ (ì˜¤ë¦„ì°¨ìˆœ) --- \n");
 			inorder(root);
 			break;
 
 		case 0:
-			printf("ÇÁ·Î±×·¥ Á¾·á\n");
+			printf("í”„ë¡œê·¸ë¨ ì¢…ë£Œ\n");
 			exit(0);
 
 		default:
-			printf("Àß¸øµÈ ¼±ÅÃÀÔ´Ï´Ù.\n");
+			printf("ì˜ëª»ëœ ì„ íƒì…ë‹ˆë‹¤.\n");
 		}
 	}
 
