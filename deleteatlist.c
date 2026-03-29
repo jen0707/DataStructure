@@ -10,14 +10,14 @@ typedef struct ListNode
 	struct ListNode* link;
 } ListNode;
 
-// error Á¤ÀÇ
+// error ì •ì˜
 void error(char* message)
 {
 	fprintf(stderr, "%s\n", message);
 	exit(1);
 }
 
-// »ğÀÔ ¿¬»ê (head)
+// ì‚½ì… ì—°ì‚° (head)
 ListNode* insert_first(ListNode* head, element value)
 {
 	ListNode* p = (ListNode*)malloc(sizeof(ListNode));
@@ -27,7 +27,7 @@ ListNode* insert_first(ListNode* head, element value)
 	head = p;
 	return head;
 }
-// ¹æ¹® ¿¬»ê (Ãâ·Â)
+// ë°©ë¬¸ ì—°ì‚° (ì¶œë ¥)
 void print_list(ListNode* head)
 {
 	for (ListNode* p = head; p != NULL; p = p->link)
@@ -36,7 +36,7 @@ void print_list(ListNode* head)
 	printf("NULL \n");
 }
 
-// Æ¯Á¤ µ¥ÀÌÅÍ °ª Ã£±â
+// íŠ¹ì • ë°ì´í„° ê°’ ì°¾ê¸°
 ListNode* delete_node(ListNode* head, element value)
 {
 	ListNode* prev = NULL;
@@ -61,12 +61,12 @@ ListNode* delete_node(ListNode* head, element value)
 		x = x->link;
 	}
 
-		error("°ªÀ» Ã£À» ¼ö ¾øÀ½");
+		error("ê°’ì„ ì°¾ì„ ìˆ˜ ì—†ìŒ");
 }
 
 element value;
 
-// Å×½ºÆ® ÇÁ·Î±×·¥
+// í…ŒìŠ¤íŠ¸ í”„ë¡œê·¸ë¨
 int main(void)
 {
 	ListNode* head = NULL;
@@ -77,7 +77,7 @@ int main(void)
 	head = insert_first(head, 21);
 	print_list(head);
 
-	printf("»èÁ¦ÇÒ °ªÀ» ÀÔ·ÂÇÏ½Ã¿À: ");
+	printf("ì‚­ì œí•  ê°’ì„ ì…ë ¥í•˜ì‹œì˜¤: ");
 	scanf_s("%d", &value);
 
 	head = delete_node(head, value);
