@@ -10,14 +10,14 @@ typedef struct ListNode
 	struct ListNode* link;
 } ListNode;
 
-// error Á¤ÀÇ
+// error ì •ì˜
 void error(char* message)
 {
 	fprintf(stderr, "%s\n", message);
 	exit(1);
 }
 
-// »ðÀÔ ¿¬»ê (head)
+// ì‚½ìž… ì—°ì‚° (head)
 ListNode* insert_first(ListNode* head, element value)
 {
 	ListNode* p = (ListNode*)malloc(sizeof(ListNode));
@@ -27,7 +27,7 @@ ListNode* insert_first(ListNode* head, element value)
 	head = p;
 	return head;
 }
-// ¹æ¹® ¿¬»ê (Ãâ·Â)
+// ë°©ë¬¸ ì—°ì‚° (ì¶œë ¥)
 void print_list(ListNode* head)
 {
 	for (ListNode* p = head; p != NULL; p = p->link)
@@ -36,7 +36,7 @@ void print_list(ListNode* head)
 	printf("NULL \n");
 }
 
-// ÃÖ¼Ò ÃÖ´ñ°ª Ã£±â
+// ìµœì†Œ ìµœëŒ“ê°’ ì°¾ê¸°
 void MinMaxfromList(ListNode* head)
 {
 	int min = head->data;
@@ -57,7 +57,7 @@ void MinMaxfromList(ListNode* head)
 	printf("MAX : % d\n", max);
 }
 
-// Å×½ºÆ® ÇÁ·Î±×·¥
+// í…ŒìŠ¤íŠ¸ í”„ë¡œê·¸ëž¨
 int main(void)
 {
 
